@@ -1,0 +1,105 @@
+.site-header {
+	display: flex;
+	align-items: stretch;
+	background-color: #4A503D;
+}
+
+.site-header * {
+	width: 100%;
+}
+
+.site-header a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color:  #FAF2DA;
+	font-size: 22px;
+	padding: 5px 7px;
+	border-radius: 2px;
+	font-weight: bold;
+	width:  unset;
+	transition: color 0.4s ease,
+				opacity 0.2s ease,
+				background-color 0.4s ease;
+}
+
+.site-header a:hover {
+	color:  black;
+	background-color: #8E9775;
+}
+
+.site-header a:active {
+	opacity: 0.5;
+}
+
+.site-header > div {
+	padding: 10px 15px;
+	display: flex;
+}
+
+.site-header  nav {
+	display: flex;
+}
+
+.site-header .left,
+.site-header .right {
+	width: 11%;
+}
+
+.site-header .center {
+	position: relative;
+}
+
+.site-header .center::before,
+.site-header .center::after {
+	content: "";
+	position: absolute;
+	width: 2px;
+	top: 0;
+	bottom: 0;
+	background-color: #E28F83;
+	display: inline-block;
+}
+
+.site-header .center::before {
+	left:  0;
+}
+
+.site-header .center::after {
+	right:  0;
+}
+
+.site-header ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.site-header .center ul {
+	justify-content: flex-end;
+}
+
+.site-header .right ul,
+.site-header .left ul {
+	justify-content: center;
+}
+
+.site-header .center li,
+.site-header .right li,
+.site-header .left li {
+	display: flex;
+	align-items: center;
+	width: unset;
+	margin: 5px;
+}
+
+.site-header .center .search {
+	margin-right: auto;
+}
+
+.site-header .search input {
+	padding: 5px;
+	border:  none;
+	font-size: 16px;
+	border-radius: 3px;
+	width: 150%;
+}

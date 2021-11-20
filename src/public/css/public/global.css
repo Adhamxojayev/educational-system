@@ -1,0 +1,70 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "Nunito", monospace;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	min-height: 100vh;
+	position: relative;
+	background-color: green;
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+#mainWrapper {
+	position: relative;
+	flex-grow: 1;
+	background-color: #E1E8EB;
+	z-index: 999;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#mainWrapper::-webkit-scrollbar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+  	width: 8px;             
+}
+
+#mainWrapper::-webkit-scrollbar-track {
+	position: absolute;
+}
+
+#mainWrapper::-webkit-scrollbar-thumb {
+	position: absolute;
+  	background-color: #4A503D;   
+  	border-radius: 20px;       
+}

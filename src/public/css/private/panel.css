@@ -1,0 +1,28 @@
+.wrapper-admin {
+	display: flex;
+	flex-direction: column;
+	background-color: #4A503D;
+	height: 100%;
+}
+
+.wrapper-admin .top {
+	display: flex;
+	align-items: stretch;
+	padding: 24px 20px;
+	height: 11%;
+	background-color: rgba(255,255,255, 0.05);
+	border-top: 0.5px solid rgba(255,255,255,0.2);
+}
+
+.wrapper-admin .main {
+	height: 87%;
+	background-color: rgba(255,255,255,0.6);
+	padding: 10px;
+}
+
+.wrapper-admin .bottom {
+	display: flex;
+	justify-content: flex-end;
+	padding: 20px 70px;
+	background-color: rgba(255,255,255,0.6);
+}

@@ -1,0 +1,157 @@
+/*  top  */
+
+.wrapper-admin .top form {
+	display: flex;
+	align-items: stretch;
+	width: 70%;
+}
+
+.wrapper-admin .top form input,
+.wrapper-admin .top form button {
+	padding: 5px 15px;
+	font-size: 17px;
+	font-weight: 900;
+	margin-right: 10px;
+	font-family: inherit;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	border: none;
+}
+
+.wrapper-admin .top form button {
+	cursor: pointer;
+	color: #FAF2DA;
+	background-color: #4A503D;
+	padding: 5px 20px;
+}
+
+.wrapper-admin .top form button:active {
+	transform: scale(0.96);
+}
+
+.wrapper-admin .top a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 50px;
+	border-radius: 5px;
+	margin-left: auto;
+	background-color: #4A503D;
+}
+
+.wrapper-admin .top a:hover {
+	background-color: #8E9775;
+}
+
+.wrapper-admin .top a:active {
+	transform: scale(0.96);
+}
+
+.wrapper-admin .top a img {
+	display: block;
+	width: 20px;
+	height: 20px;
+}
+
+/*  main  */
+
+.wrapper-admin .main ul li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px;
+	background-color: #EEECDA;
+	margin-bottom: 7px;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.wrapper-admin .main ul .options {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.wrapper-admin .main ul button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	cursor: pointer;
+}
+
+.wrapper-admin .main ul button:first-child {
+	margin-right: 30px;
+}
+
+.wrapper-admin .main ul .del {
+	background-image: url('/img/trash.svg');
+}
+
+.wrapper-admin .main ul .edit {
+	background-image: url('/img/edit.svg');
+}
+
+.wrapper-admin .main ul .del:hover {
+	background-image: url('/img/trash-open.svg');
+}
+
+.wrapper-admin .main ul button img {
+	display: block;
+	width: 20px;
+	height: 20px;
+}
+
+/* bottom  */
+
+.wrapper-admin .bottom div {
+	display: flex;
+	align-items: center;
+}
+
+.wrapper-admin .bottom button {
+	background: none;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 30px;
+	height: 30px;
+	border: none;
+}
+
+.wrapper-admin .bottom #prev {
+	background-image: url('/img/arrow.svg');
+	transform: rotateZ(180deg);
+}
+
+.wrapper-admin .bottom #next {
+	background-image: url('/img/arrow.svg');
+}
+
+.wrapper-admin .bottom #prev:hover {
+	transform: rotateZ(180deg) scale(1.05);
+}
+
+.wrapper-admin .bottom #next:hover {
+	transform: scale(1.05);
+}
+
+.wrapper-admin .bottom #prev:active {
+	transform: rotateZ(180deg) scale(0.98);
+}
+
+.wrapper-admin .bottom #next:active {
+	transform: scale(0.98);
+}
+
+
+.wrapper-admin .bottom span {
+	margin: 0 20px;
+	font-size: 20px;
+	font-weight: bold;
+}

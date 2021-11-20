@@ -1,0 +1,39 @@
+<!-- css -->
+<link rel="stylesheet" href="/css/public/login.css">
+
+<!-- html -->
+<div class="login-wrapper">
+	<img src="/img/padlock.svg" alt="padlock">
+	<div id="loginMessage"><%= errorMessage %></div>
+	<form action="/login" method="POST">
+		<div class="roles-wrapper">
+			<label>
+				<input checked checked class="visually-hidden" type="radio" name="role" value="3">
+				<span>Student</span>
+			</label>
+			<label>
+				<input class="visually-hidden" type="radio" name="role" value="2">
+				<span>Teacher</span>
+			</label>
+			<label>
+				<input class="visually-hidden" type="radio" name="role" value="1">
+				<span>Admin</span>
+			</label>
+		</div>
+		<div class="details-wrapper">
+			<label>
+				<img src="/img/user.svg" alt="user icon">
+				<input type="text" placeholder="username" name="username" required>
+			</label>
+			<label>
+				<img src="/img/padlock.svg" alt="user icon">
+				<input id="passwordInput" type="password" placeholder="password" name="password" required>
+				<button type="button" id="passwordButton">
+					<img src="/img/closed-eye.svg" alt="user icon">
+				</button>
+			</label>
+		</div>
+		<button type="submit">Log in</button>
+	</form>
+</div>
+<script src="/js/login.js"></script>

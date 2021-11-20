@@ -1,0 +1,113 @@
+table {
+	width: 100%;
+	max-height: 100%;
+	font-weight: bolder;
+	font-size: 19px;
+	padding: 20px;
+}
+
+.table-heading {
+	display: flex;
+	justify-content: space-between;
+	font-size: 25px;
+	font-weight: 900;
+	text-transform: uppercase;
+	padding: 10px 30px;
+	margin-top: 15px;
+}
+
+.table-heading span {
+	color: #4A503D;
+}
+
+table, td, th {
+	border-spacing: 0 10px;
+}
+
+table thead {
+	position: sticky;
+	top: -10px;
+	z-index: 1;
+}
+
+tbody tr {
+	transition: box-shadow 0.2s ease;
+}
+
+tbody tr:hover {
+	box-shadow: 0 0 4px 1px rgba(0,0,0,0.6);
+}
+
+tbody tr:nth-child(even) {
+	color: #FAF2DA;
+	background-color: #8E9775;
+}
+
+
+tbody tr:nth-child(odd) {
+	color: #FAF2DA;
+	background-color: #8E9775;
+}
+
+th {
+	text-align: left;
+	background-color: #56776C;
+	color: white;
+	font-weight: 900;
+	text-transform: uppercase;	
+}
+
+th:first-child,
+td:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+th:last-child,
+td:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+td, th {
+	padding: 15px 15px;
+	max-width: 70px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+td a {
+	text-decoration: underline;
+	color: inherit;
+	font-size: inherit;
+}
+
+td button {
+	border-radius: 5px;
+	padding: 5px;
+	font-weight: inherit;
+	color: inherit;
+	background-color: inherit;
+	border-color: white;
+	border-width: 3px;
+	cursor: pointer;
+	font-size: inherit;
+}
+
+#tableSearch {
+	padding: 5px;
+	width: 300px;
+	margin-left: 30px;
+	outline: none;
+	border:  none;
+	font-weight: bold;
+	background-color: transparent;
+	border-bottom: 1px solid #4A503D;
+}
+
+
+
+
+
+

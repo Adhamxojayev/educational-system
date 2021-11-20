@@ -1,0 +1,40 @@
+<!-- css -->
+<link rel="stylesheet" href="/css/public/table.css">
+
+<!-- html -->
+<div class="table-heading">
+	<span><%= tableName1 %></span>
+	<span><%= tableName2 %></span>
+</div>
+<input id="tableSearch" type="text" placeholder="search in table..">
+<table>
+	<thead>
+		<tr>
+			<th>N</th>
+			<% for (let key in table) { %>
+				<th> <%= key %> </th>
+			<% } %>
+		</tr>
+	</thead>
+	<tbody id="tbodyElement">
+		<% let keys = Object.keys(table) %>
+		<% for (let index = 0; index < table[keys[0]].length; index++) { %>
+			<tr>
+				<td> <%= index + 1 %> </td>
+				<% for (let i = 0; i < keys.length; i++) {%>
+					<% let type = table[keys[i]][index].type %>
+					
+					<% if(type == 'link') {%>
+						<td> <a href="<%= table[keys[i]][index].link %>"><%= table[keys[i]][index].text %></a> </td>
+					<% } else if (type == 'button') { %>
+						<td> <button><%= table[keys[i]][index].text %></button> </td>
+					<% } else { %>
+						<td> <%= table[keys[i]][index].text %> </td>
+					<% } %>
+
+				<% }%>
+			</tr>
+		<% } %>
+	</tbody>
+</table>
+<script src="/js/table.js"></script>
