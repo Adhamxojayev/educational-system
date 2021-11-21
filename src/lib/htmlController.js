@@ -42,7 +42,9 @@ module.exports = (userInfo, body, header) => {
         data = {
             panel: body.panel || 'table-groups.html',
             data: {
-                data: body.data || []
+                data: body.data || [],
+                pages: body.pages || 0,
+                page: body.page || 0
             }
         }
     }
