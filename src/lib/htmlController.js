@@ -44,7 +44,8 @@ module.exports = (userInfo, body, header) => {
             data: {
                 data: body.data || [],
                 pages: body.pages || 0,
-                page: body.page || 0
+                page: body.page || 0,
+                admin: body.admin.admin || []
             }
         }
     }

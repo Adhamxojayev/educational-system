@@ -33,14 +33,14 @@ create table groups (
 );
 
 create table group_students (
-    group_id int not null references groups(group_id),
+    group_id int not null references groups(group_id) on delete cascade,
     student_id int not null references students(student_id)
 );
 
 create table scores (
     score_id serial primary key,
     student_id int not null references students(student_id),
-    group_id int not null references groups(group_id),
+    group_id int not null references groups(group_id) on delete cascade,
     score_desc text,
     created_at timestamptz default current_timestamp,
     score_value int not null

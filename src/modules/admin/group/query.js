@@ -13,7 +13,22 @@ const COUNT = `
     from groups;
 `
 
+const DELETE_GROUP = `
+    delete from groups
+    where group_id = $1
+    returning *
+`
+
+const ADMIN = `
+    select 
+        u.first_name || ' ' || u.last_name as admin
+    from users u
+    where user_id = $1    
+`
+
 module.exports = {
     COUNT,
-    GROUPS
+    GROUPS,
+    DELETE_GROUP,
+    ADMIN
 }

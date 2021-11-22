@@ -14,7 +14,24 @@ const GET = async (req,res) => {
     }
 }
 
+const DELETE = async (req,res) => {
+    try {
+
+        let responseDelete = await model.deleted(req.body, req.userInfo)
+
+        if(responseDelete){
+            res.status(204).json({status: 204, message: 'the group deleted'})
+        }else{
+            res.status(400).json({status: 400, message: 'Something went wrong!'})
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
  
 module.exports = {
-    GET
+    GET,
+    DELETE
 }
