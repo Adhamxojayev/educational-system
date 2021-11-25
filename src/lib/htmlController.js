@@ -11,15 +11,13 @@ module.exports = (userInfo, body, header) => {
 
     if(userInfo.role == 'student'){
         links = [
-            {link: '/users', text: 'foydalanuvchilar'},
-            {link: '/groups', text: 'guruhlar'},
-            {link: '/teachers', text: 'ustozlar'},
+            {link: '/groups', text: 'groups'},
+            {link: '/teachers', text: 'teachers'},
         ]
     }else if(userInfo.role == 'admin' || userInfo.role == 'teacher'){
         links = [
-            {link: '/users', text: 'foydalanuvchilar'},
-            {link: '/groups', text: 'guruhlar'},
-            {link: '/teachers', text: 'ustozlar'},
+            {link: '/groups', text: 'groups'},
+            {link: '/teachers', text: 'teachers'},
             {link: '/admin', text: 'admin'},
         ]
     }else{

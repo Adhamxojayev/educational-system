@@ -1,8 +1,8 @@
 
 const GROUPS = `
     select 
-        group_id,
-        group_name
+        group_id as id,
+        group_name as name
     from groups  
     offset $1 fetch first $2 row only;
 `

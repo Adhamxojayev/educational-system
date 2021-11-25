@@ -12,12 +12,12 @@
 	<div class="main">
 		<ul>
 
-			<% for (let group of data) { %>
+			<% for (let key of data) { %>
 				<li>
-					<span><%= group.group_name %></span>
+					<span><%= key.name %></span>
 					<div class="options">
-						<button data-id="<%= group.group_id %>" class="del"></button>
-						<button data-id="<%= group.group_id %>" class="edit"><button>
+						<button data-id="<%= key.id %>" class="del"></button>
+						<button data-id="<%= key.id %>" class="edit"><button>
 					</div>
 				</li>
 			<% }%>		

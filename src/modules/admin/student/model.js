@@ -1,19 +1,23 @@
 const { fetch, fetchAll } = require("../../../lib/postgres.js");
-const {GROUPS, COUNT, DELETE_GROUP, ADMIN} = require('./query.js')
+const {STUDENTS,ADMIN,COUNT} = require('./query.js')
 
 
-const groups = async ({page = 1}, {userId}) => {
+const students = async ({page=1}, {userId}) => {
     try {
         let admin = await fetch(ADMIN, userId)
-        let { count } = await fetch(COUNT)
-        let limit = 5
-        let pages = Math.ceil(count / limit)
-        let groups = await fetchAll(GROUPS, (page - 1) * limit, limit)
 
+        let { count } = await fetch(COUNT)
+        
+        let limit = 10
+        
+        let pages = Math.ceil(count / limit)
+        
+        let student = await fetchAll(STUDENTS,(page - 1) * limit, limit)
+        
         return {
             html: 'private/admin.html',
             panel: 'table-groups.html',
-            data: groups,
+            data: student,
             pages: pages,
             page: page,
             admin
@@ -24,18 +28,6 @@ const groups = async ({page = 1}, {userId}) => {
     }
 }
 
-const deleted = async ({ID}) => {
-    try {
-        
-        let delGroup = await fetch(DELETE_GROUP, ID)
-        return delGroup
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-
 module.exports = {
-    groups,
-    deleted
-} 
+    students,
+}
