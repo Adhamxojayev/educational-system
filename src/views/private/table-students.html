@@ -1,0 +1,37 @@
+<!-- css -->
+<link rel="stylesheet" href="/css/private/panel.css">
+<link rel="stylesheet" href="/css/private/table.css">
+
+<!-- html -->
+<div class="wrapper-admin">
+	<div class="top">
+		<a href="/admin/add/students">
+			<img src="/img/add-orange.svg" alt="add-icon">
+		</a>
+	</div>
+	<div class="main">
+		<ul>
+
+			<% for (let key of data) { %>
+				<li>
+					<span><%= key.name %></span>
+					<div class="options">
+						<button data-id="<%= key.id %>" class="del"></button>
+						<button data-id="<%= key.id %>" class="edit"><button>
+					</div>
+				</li>
+			<% }%>		
+
+			
+		</ul>
+	</div>
+	<div class="bottom">
+		<div>
+			<a href="/admin/students?page=<%= page > 1 ? +page - 1 : page %>"><button id="prev"></button></a>
+			<span><span id="currentPage"><%= page %></span>/
+			<span id="totalPage"><%= pages %></span></span>
+			<a href="/admin/students?page=<%= pages > page ? +page + 1 : page %>"><button id="next"></button></a>
+		</div>
+	</div>
+</div>
+<script src="/js/delete-students.js"></script>

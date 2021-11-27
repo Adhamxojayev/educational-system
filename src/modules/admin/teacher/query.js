@@ -21,8 +21,26 @@ const ADMIN = `
     where user_id = $1    
 `
 
+const TEACHER_ADD = `
+    insert into users (first_name,last_name,username,password,contact,age,gender,role)
+        values ($1, $2, $3, crypt( $4, gen_salt('bf')),  $5, $6, $7, $8)
+    returning *    
+`
+const ADDED_TEACHER = `
+    insert into teachers (user_id) values ($1) returning *
+`
+const DELETE_TEACHER = `
+    delete from teachers
+    where user_id = $1
+    returning *
+`
+
+
 module.exports = {
     TEACHERS,
     ADMIN,
-    COUNT
+    COUNT,
+    TEACHER_ADD,
+    ADDED_TEACHER,
+    DELETE_TEACHER
 }

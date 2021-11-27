@@ -21,8 +21,15 @@ const ADMIN = `
     where user_id = $1    
 `
 
+const DELETE_STUDENT = `
+    delete from students
+    where user_id = $1
+    returning *
+`
+
 module.exports = {
     STUDENTS,
     ADMIN,
-    COUNT
+    COUNT,
+    DELETE_STUDENT
 }

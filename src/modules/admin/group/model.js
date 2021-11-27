@@ -1,5 +1,5 @@
 const { fetch, fetchAll } = require("../../../lib/postgres.js");
-const {GROUPS, COUNT, DELETE_GROUP, ADMIN} = require('./query.js')
+const {GROUPS, COUNT, DELETE_GROUP, ADMIN, ADDED_GROUP} = require('./query.js')
 
 
 const groups = async ({page = 1}, {userId}) => {
@@ -35,7 +35,46 @@ const deleted = async ({ID}) => {
     }
 }
 
+
+const addedGroups = async ({userId}) => {
+    try {
+        
+        let admin = await fetch(ADMIN, userId)
+
+        return {
+            html: 'private/admin.html',
+            panel: 'edit-groups.html',
+            admin
+        }
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const addedGroupPOST = async ({groupName, teacherId},{userId}) => {
+    try {
+        
+        let admin = await fetch(ADMIN, userId)
+
+        let data = await fetchAll(ADDED_GROUP, groupName, teacherId)
+
+        return {
+            html: 'private/admin.html',
+            panel: 'edit-groups.html',
+            admin
+        }
+
+    } catch (error) {
+        console.error(error);
+    }
+
+}
+
+
 module.exports = {
     groups,
-    deleted
+    deleted,
+    addedGroups,
+    addedGroupPOST
 } 

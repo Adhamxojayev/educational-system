@@ -1,5 +1,5 @@
 const { fetch, fetchAll } = require("../../../lib/postgres.js");
-const {TEACHERS, COUNT, ADMIN} = require('./query.js')
+const {TEACHERS, COUNT, ADMIN, TEACHER_ADD, ADDED_TEACHER, DELETE_TEACHER} = require('./query.js')
 
 
 
@@ -10,7 +10,7 @@ const teachers = async ({page=1},{userId}) => {
 
         let { count } = await fetch(COUNT)
         
-        let limit = 10
+        let limit = 5
         
         let pages = Math.ceil(count / limit)
         
@@ -18,7 +18,7 @@ const teachers = async ({page=1},{userId}) => {
         
         return {
             html: 'private/admin.html',
-            panel: 'table-groups.html',
+            panel: 'table-teachers.html',
             data: teacher,
             pages: pages,
             page: page,
@@ -30,7 +30,58 @@ const teachers = async ({page=1},{userId}) => {
     }
 }
 
+const addedTeacher = async ({userId}) => {
+    try {
+        
+        let admin = await fetch(ADMIN, userId)
+
+        return {
+            html: 'private/admin.html',
+            panel: 'edit-teacher.html',
+            admin
+        }
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const addedTeacherPOST = async ({firstName, lastName, username, password, contact, age, gender},{userId}) => {
+    try {
+        
+        let admin = await fetch(ADMIN, userId)
+
+        let users = await fetchAll(TEACHER_ADD, firstName, lastName, username, password, contact, age, gender, 2)
+
+
+        let data = await fetchAll(ADDED_TEACHER, users[0].user_id)
+
+        return {
+            html: 'private/admin.html',
+            panel: 'edit-teacher.html',
+            admin
+        }
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const deleted = async ({ID}) => {
+    try {
+
+        let delTeacher = await fetch(DELETE_TEACHER, ID)
+        return delTeacher
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 
 module.exports = {
     teachers,
+    addedTeacher,
+    addedTeacherPOST,
+    deleted
 }

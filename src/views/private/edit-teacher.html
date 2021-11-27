@@ -1,0 +1,45 @@
+<!-- css -->
+<link rel="stylesheet" href="/css/private/panel.css">
+<link rel="stylesheet" href="/css/private/edit.css">
+
+<!-- html -->
+<div class="wrapper-admin">
+	<div class="top"></div>
+	<div class="main">
+		<form action="/admin/add/teachers" method="POST" class="added_group">
+			<label>
+                first-name -- <input name="firstName" type="text" required maxlength="35" placeholder="for example: bobir "> 
+			</label>
+
+			<label>
+				last-name --- <input name="lastName" type="text" required maxlength="25" placeholder="for example: aliyev "> 
+			</label>
+
+            <label>
+				username -- <input name="username" type="text" required maxlength="35" placeholder="for example: bobir101 "> 
+			</label>
+
+			<label>
+				password --- <input name="password" type="text" required maxlength="25" placeholder="for example: bobir12345 "> 
+			</label>
+
+            <label>
+				contact ------ <input name="contact" type="text" required maxlength="25" placeholder="for example: 998977232312 "> 
+			</label>
+            
+            <label>
+                age ----------- <input name="age" type="text" required maxlength="25" placeholder="for example: 28 "> 
+			</label>
+			
+            <label for="male">erkak
+                <input type="radio" id="male" name="gender" value="1">
+            </label><br>
+            <label for="female"> ayol
+                <input type="radio" id="female" name="gender" value="2">
+            </label><br>
+
+			<button type="submit">send</button>
+		</form>
+	</div>
+	<div class="bottom"></div>
+</div>

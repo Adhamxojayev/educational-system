@@ -1,0 +1,46 @@
+.main{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.added_group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.added_group label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: rgb(110, 110, 110);
+}
+.added_group label input {
+    width: 333px;
+    padding: 10px;
+    outline: none;
+    margin: 5px;
+}
+
+.added_group button{
+    width: 177px;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 11px;
+    margin-top: 10px;  
+    color: #fff;
+    font-weight: bold; 
+}
+
+.added_group button:hover{
+    background-color: rgb(19, 163, 19);
+}
+

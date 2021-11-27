@@ -26,9 +26,15 @@ const ADMIN = `
     where user_id = $1    
 `
 
+const ADDED_GROUP = `
+    insert into groups (group_name, teacher_id)
+    values ($1, $2)
+`
+
 module.exports = {
     COUNT,
     GROUPS,
     DELETE_GROUP,
-    ADMIN
+    ADMIN,
+    ADDED_GROUP
 }

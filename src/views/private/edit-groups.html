@@ -6,14 +6,16 @@
 <div class="wrapper-admin">
 	<div class="top"></div>
 	<div class="main">
-		<form action="#">
+		<form action="/admin/add/groups" method="POST" class="added_group">
 			<label>
-				Group name: <input type="text" required maxlength="15"> 
+				Group name -- <input name="groupName" type="text" required maxlength="35" placeholder="for example: english "> 
 			</label>
 
 			<label>
-				Group teacher: <input type="text" required maxlength="15"> 
+				Teacher id ------ <input name="teacherId" type="text" required maxlength="25" placeholder="for example: 7 "> 
 			</label>
+			
+			<button type="submit">send</button>
 		</form>
 	</div>
 	<div class="bottom"></div>
