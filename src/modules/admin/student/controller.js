@@ -29,7 +29,33 @@ const DELETE = async (req,res) => {
     }
 }
 
+const ADD = async (req,res) => {
+    try {
+        res.render( ...htmlController(
+            req.userInfo,
+            await model.addedStudent(req.userInfo),
+            {header: 'private/header.html'}
+        ))
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const ADDED = async (req,res) => {
+    try {
+        res.render( ...htmlController(
+            req.userInfo,
+            await model.addedStudentPOST(req.body,req.userInfo),
+            {header: 'private/header.html'}
+        ))
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     GET,
-    DELETE
+    DELETE,
+    ADD,
+    ADDED
 }

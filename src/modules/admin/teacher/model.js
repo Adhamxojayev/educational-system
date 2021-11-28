@@ -10,7 +10,7 @@ const teachers = async ({page=1},{userId}) => {
 
         let { count } = await fetch(COUNT)
         
-        let limit = 5
+        let limit = 10
         
         let pages = Math.ceil(count / limit)
         

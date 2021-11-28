@@ -28,7 +28,6 @@ const ADD = async (req,res) => {
 
 const ADDED = async (req,res) => {
     try {
-        console.log(req.body);
         res.render( ...htmlController(
             req.userInfo,
             await model.addedTeacherPOST(req.body,req.userInfo),

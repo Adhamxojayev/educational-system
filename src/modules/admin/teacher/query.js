@@ -26,9 +26,11 @@ const TEACHER_ADD = `
         values ($1, $2, $3, crypt( $4, gen_salt('bf')),  $5, $6, $7, $8)
     returning *    
 `
+
 const ADDED_TEACHER = `
     insert into teachers (user_id) values ($1) returning *
 `
+
 const DELETE_TEACHER = `
     delete from teachers
     where user_id = $1
